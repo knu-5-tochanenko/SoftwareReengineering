@@ -44,7 +44,6 @@ void authorization::readSettings()
             QString a = "";
             for (int i = pos + 1; i < w.size(); i++)
             {
-
                 a += w[i];
             }
             w = w.left(pos);
