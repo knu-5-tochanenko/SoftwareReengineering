@@ -17,6 +17,7 @@ public:
         static Singleton instance;
         return instance;
     }
+
     QString wayToTheElement;
     int width;
     bool IfLevels;

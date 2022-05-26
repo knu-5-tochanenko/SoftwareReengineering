@@ -15,12 +15,13 @@ class levels : public QDialog
 public:
     explicit levels(QWidget *parent = nullptr);
     ~levels();
+
     void makeInvisible();
     void checkButtons();
     void goToPuzzle(int width, QString way, int level);
+
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
     void on_pushButton_3_clicked();
     void on_pushButton_4_clicked();
@@ -34,7 +35,6 @@ private slots:
     void on_pushButton_12_clicked();
     void on_pushButton_13_clicked();
     void on_pushButton_14_clicked();
-
     void on_pushButton_15_clicked();
 
 private:

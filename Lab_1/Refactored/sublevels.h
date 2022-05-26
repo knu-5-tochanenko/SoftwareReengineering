@@ -15,6 +15,7 @@ class sublevels : public QDialog
 public:
     explicit sublevels(QWidget *parent = nullptr);
     ~sublevels();
+
 public slots:
     void clickedSlot();
 

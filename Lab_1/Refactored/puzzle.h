@@ -22,24 +22,21 @@ public:
     ClickableLabel *picture1;
 
     int N;
+
     void swapElements(QLayoutItem *l1, QLayoutItem *l2);
     void sort();
     void help();
     bool IfFinished(QVector<int> places);
     void showStep();
     void NewSort(QVariant a);
+
 private slots:
     void updateTime();
     void pic_clicked();
-
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
-
     void on_pushButton_3_clicked();
-
     void on_pushButton_5_clicked();
-
     void on_pushButton_4_clicked();
 
 private:

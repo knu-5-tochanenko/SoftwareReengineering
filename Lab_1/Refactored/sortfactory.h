@@ -93,6 +93,7 @@ public:
         }
         Singleton::getInstance().stepsForSorting.push_back(array);
     }
+
     void Sift(QVector<int> &vHeap, const QVector<int>::size_type heapSize, const QVector<int>::size_type siftNode)
     {
         QVector<int>::size_type i, j;
@@ -147,7 +148,6 @@ public:
             {
                 while ((from_left != from_right) && (pivot < a[from_right]))
                     from_right--;
-                // cout << "swaping " << a[from_left] << " with "<< a[from_right] << endl;
                 tmp = a[from_right];
                 a[from_right] = a[from_left];
                 a[from_left] = tmp;
