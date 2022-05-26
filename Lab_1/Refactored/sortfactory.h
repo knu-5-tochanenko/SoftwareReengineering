@@ -29,7 +29,6 @@ public:
             {
                 data[j + 1] = data[j];
                 j = j - 1;
-
             }
             data[j + 1] = val;
             QVector<int> array;
@@ -79,7 +78,9 @@ public:
     void Swap(QVector<int> &vHeap, QVector<int>::size_type i, QVector<int>::size_type j)
     {
         if (i == j)
+        {
             return;
+        }
 
         int temp;
         temp = vHeap[i];
@@ -103,9 +104,13 @@ public:
         {
             i = j;
             if (((2 * i + 1) < heapSize) && vHeap[j] < vHeap[2 * i + 1])
+            {
                 j = 2 * i + 1;
+            }
             if (((2 * i + 2) < heapSize) && vHeap[j] < vHeap[2 * i + 2])
+            {
                 j = 2 * i + 2;
+            }
 
             Swap(vHeap, i, j);
         } while (i != j);
@@ -143,7 +148,9 @@ public:
         while (from_left != from_right)
         {
             if (a[from_left] <= pivot)
+            {
                 from_left++;
+            }
             else
             {
                 while ((from_left != from_right) && (pivot < a[from_right]))
@@ -162,7 +169,9 @@ public:
         }
 
         if (a[from_left] > pivot)
+        {
             from_left--;
+        }
         a[start] = a[from_left];
         a[from_left] = pivot;
         QVector<int> array;

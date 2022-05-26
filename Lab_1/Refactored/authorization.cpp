@@ -34,7 +34,9 @@ void authorization::readSettings()
 
     int pos = w.lastIndexOf(QChar(';'));
     if (pos == -1)
+    {
         Singleton::getInstance().visitedLevels.push_back(w);
+    }
     else
     {
         while (pos != -1)

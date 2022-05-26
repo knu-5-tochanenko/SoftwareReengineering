@@ -36,7 +36,9 @@ sublevels::sublevels(QWidget *parent) : QDialog(parent),
     else
     {
         if (level == 1 || level == 5)
+        {
             NumberOfSublevels = 0;
+        }
         else
         {
             NumberOfSublevels = level;

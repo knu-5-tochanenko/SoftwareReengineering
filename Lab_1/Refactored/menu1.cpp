@@ -23,7 +23,9 @@ void menu1::writeSettings()
     {
         Visited += Singleton::getInstance().visitedLevels[i];
         if (i + 1 < Singleton::getInstance().visitedLevels.size())
+        {
             Visited += ";";
+        }
     }
     users.setValue("visited Levels", Visited);
     users.endGroup();
