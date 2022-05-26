@@ -153,8 +153,9 @@ public:
             }
             else
             {
-                while ((from_left != from_right) && (pivot < a[from_right]))
+                while ((from_left != from_right) && (pivot < a[from_right])) {
                     from_right--;
+                }
                 tmp = a[from_right];
                 a[from_right] = a[from_left];
                 a[from_left] = tmp;
