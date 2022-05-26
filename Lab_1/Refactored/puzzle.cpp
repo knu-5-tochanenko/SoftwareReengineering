@@ -80,7 +80,9 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
                 label->setStyleSheet("border: 4px solid #FFF851;");
             }
             else
+            {
                 label->setStyleSheet("border: none;");
+            }
 
             ClickableLabel::connect(label, SIGNAL(clicked()), this, SLOT(pic_clicked()));
             ui->gridLayout->addWidget(label, label->place / N, label->place % N);
