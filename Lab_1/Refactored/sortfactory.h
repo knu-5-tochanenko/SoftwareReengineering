@@ -186,12 +186,6 @@ public:
         return (from_left);
     }
 
-    /*
-      Recursive QS function. Base case is an empty vector.
-      Precondition:
-      Postcondition: The vector that was passed as parameter will be
-        sorted in ascending order.
-    */
     void quickSort(QVector<int> &a, int p, int r)
     {
         if (p < r)

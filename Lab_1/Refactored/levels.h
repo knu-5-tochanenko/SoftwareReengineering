@@ -1,5 +1,6 @@
 #ifndef LEVELS_H
 #define LEVELS_H
+
 #include "mainwindow.h"
 #include <QDialog>
 

@@ -7,7 +7,6 @@
 
 class Singleton
 {
-
 private:
     Singleton() {}
 

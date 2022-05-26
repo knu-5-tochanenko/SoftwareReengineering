@@ -1,5 +1,6 @@
 #ifndef TESTING_H
 #define TESTING_H
+
 #include "puzzle.h"
 #include <QtTest/QtTest>
 

@@ -5,7 +5,6 @@
 #include "settings.h"
 #include "sortfactory.h"
 #include <QFileDialog>
-
 #include <QWidget>
 #include <QVector>
 #include <QPainter>
@@ -23,9 +22,7 @@ QVector<int> places;
 puzzle::puzzle(QWidget *parent) : QDialog(parent),
                                   ui(new Ui::puzzle)
 {
-
     ui->setupUi(this);
-
     ui->label->setVisible(false);
     if (Singleton::getInstance().IfLevels == true)
     {
@@ -63,7 +60,6 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
     {
         for (int j = 0; j < N; j++)
         {
-
             ClickableLabel *label = new ClickableLabel();
             label->place = places[i * N + j];
             label->index = (i)*N + j;
@@ -95,7 +91,6 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
         SortFactory *sortFactory = new QuickFactory();
         switch (Singleton::getInstance().sort)
         {
-
         case 2:
             sortFactory = new HeapFactory();
             break;
@@ -143,13 +138,11 @@ void puzzle::showStep()
 
 void puzzle::updateTime()
 {
-
     QThread::msleep(500);
 }
 
 void puzzle::swapElements(QLayoutItem *l1, QLayoutItem *l2)
 {
-
     ClickableLabel *a = static_cast<ClickableLabel *>(l1->widget());
     ClickableLabel *b = static_cast<ClickableLabel *>(l2->widget());
     picture1 = a;
@@ -192,7 +185,6 @@ void puzzle::sort()
 
 void puzzle::pic_clicked()
 {
-
     ClickableLabel *obj = (ClickableLabel *)sender();
 
     if (picture1 == NULL)
@@ -328,12 +320,10 @@ void puzzle::on_pushButton_clicked()
 void puzzle::on_pushButton_2_clicked()
 {
     sort();
-    // help();
 }
 
 void puzzle::on_pushButton_3_clicked()
 {
-
     close();
     End w;
     w.setModal(true);

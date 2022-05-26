@@ -60,7 +60,6 @@ sublevels::sublevels(QWidget *parent) : QDialog(parent),
 
 void sublevels::clickedSlot()
 {
-
     Singleton::getInstance().wayToTheElement = ((QPushButton *)sender())->statusTip();
     hide();
     puzzle wind;
