@@ -4,21 +4,20 @@
 #include "levels.h"
 #include "menu1.h"
 #include "forpleasure.h"
-#include<QSettings>
+#include <QSettings>
 
-End::End(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::End)
+End::End(QWidget *parent) : QDialog(parent),
+                            ui(new Ui::End)
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
-    int a= Singleton::getInstance().NumberOfStars;
+    int a = Singleton::getInstance().NumberOfStars;
     ui->label->setText(QString::number(a));
     QPixmap pixmap(":/levels/star.png");
     pixmap = pixmap.scaled(100, 100, Qt::KeepAspectRatio);
-    QLabel *label=new QLabel;
+    QLabel *label = new QLabel;
     label->setPixmap(pixmap);
-    ui->gridLayout->addWidget(label, 0,0);
+    ui->gridLayout->addWidget(label, 0, 0);
 }
 
 End::~End()

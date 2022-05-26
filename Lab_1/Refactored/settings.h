@@ -3,8 +3,9 @@
 
 #include <QDialog>
 
-namespace Ui {
-class Settings;
+namespace Ui
+{
+    class Settings;
 }
 
 class Settings : public QDialog
@@ -16,10 +17,7 @@ public:
     ~Settings();
 
 private slots:
-
-
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
 
 private:
