@@ -3,8 +3,9 @@
 
 #include <QDialog>
 
-namespace Ui {
-class sublevels;
+namespace Ui
+{
+    class sublevels;
 }
 
 class sublevels : public QDialog
@@ -14,7 +15,7 @@ class sublevels : public QDialog
 public:
     explicit sublevels(QWidget *parent = nullptr);
     ~sublevels();
- public slots:
+public slots:
     void clickedSlot();
 
 private slots:

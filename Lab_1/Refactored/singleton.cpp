@@ -1,3 +1,2 @@
 #include "singleton.h"
-#include"sortfactory.h"
-
+#include "sortfactory.h"

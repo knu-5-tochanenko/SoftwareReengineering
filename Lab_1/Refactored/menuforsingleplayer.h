@@ -3,8 +3,9 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class menuForSinglePlayer;
+namespace Ui
+{
+    class menuForSinglePlayer;
 }
 
 class menuForSinglePlayer : public QMainWindow

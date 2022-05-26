@@ -3,9 +3,9 @@
 #include "mainwindow.h"
 #include <QDialog>
 
-
-namespace Ui {
-class levels;
+namespace Ui
+{
+    class levels;
 }
 
 class levels : public QDialog

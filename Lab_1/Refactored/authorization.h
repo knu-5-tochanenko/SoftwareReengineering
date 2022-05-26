@@ -3,8 +3,9 @@
 
 #include <QMainWindow>
 
-namespace Ui {
-class authorization;
+namespace Ui
+{
+    class authorization;
 }
 
 class authorization : public QMainWindow
@@ -22,7 +23,6 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
-
 
 private:
     Ui::authorization *ui;
