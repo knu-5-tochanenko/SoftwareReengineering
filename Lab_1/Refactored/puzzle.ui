@@ -34,7 +34,7 @@
      <height>181</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QGridLayout" name="gridLayout_puzzle">
     <property name="sizeConstraint">
      <enum>QLayout::SetFixedSize</enum>
     </property>
@@ -49,13 +49,13 @@
      <height>121</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout_3">
+   <layout class="QGridLayout" name="gridLayout_picture">
     <property name="sizeConstraint">
      <enum>QLayout::SetFixedSize</enum>
     </property>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButton_settings">
    <property name="geometry">
     <rect>
      <x>590</x>
@@ -68,7 +68,7 @@
     <string>Settings</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pushButton_toEnd">
    <property name="geometry">
     <rect>
      <x>820</x>
@@ -81,7 +81,7 @@
     <string>&gt;&gt;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="pushButton_exit">
    <property name="geometry">
     <rect>
      <x>740</x>
@@ -94,7 +94,7 @@
     <string>exit</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_congratulations">
    <property name="geometry">
     <rect>
      <x>460</x>
@@ -113,7 +113,7 @@
     <string>CONGRATULATIONS</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="pushButton_back">
    <property name="geometry">
     <rect>
      <x>820</x>
@@ -126,7 +126,7 @@
     <string>&lt;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="pushButton_forward">
    <property name="geometry">
     <rect>
      <x>820</x>

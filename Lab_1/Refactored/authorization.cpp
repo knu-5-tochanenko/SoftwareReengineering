@@ -13,16 +13,16 @@ authorization::authorization(QWidget *parent) : QMainWindow(parent),
     readSettings();
     ui->setupUi(this);
     int a = Singleton::getInstance().NumberOfStars;
-    ui->label->setText(QString::number(a));
+    ui->label_score->setText(QString::number(a));
     QPixmap pixmap(":/levels/star.png");
     pixmap = pixmap.scaled(100, 100, Qt::KeepAspectRatio);
-    QLabel *label = new QLabel;
-    label->setPixmap(pixmap);
-    ui->gridLayout_3->addWidget(label, 0, 0);
+    QLabel *labelScore = new QLabel;
+    labelScore->setPixmap(pixmap);
+    ui->gridLayout_label->addWidget(labelScore, 0, 0);
 
-    connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(on_pushButton_2_clicked()));
-    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(on_pushButton_clicked()));
-    connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(on_pushButton_3_clicked()));
+    connect(ui->pushButton_exit, SIGNAL(clicked()), this, SLOT(on_pushButton_exit_clicked()));
+    connect(ui->pushButton_continue, SIGNAL(clicked()), this, SLOT(on_pushButton_continue_clicked()));
+    connect(ui->pushButton_newGame, SIGNAL(clicked()), this, SLOT(on_pushButton_newGame_clicked()));
 }
 
 void authorization::readSettings()
@@ -59,7 +59,7 @@ authorization::~authorization()
     delete ui;
 }
 
-void authorization::on_pushButton_clicked()
+void authorization::on_pushButton_continue_clicked()
 {
     hide();
     menu1 window;
@@ -68,12 +68,12 @@ void authorization::on_pushButton_clicked()
     window.exec();
 }
 
-void authorization::on_pushButton_2_clicked()
+void authorization::on_pushButton_exit_clicked()
 {
     hide();
 }
 
-void authorization::on_pushButton_3_clicked()
+void authorization::on_pushButton_newGame_clicked()
 {
     Singleton::getInstance().NumberOfStars = 0;
     Singleton::getInstance().wayToTheElement.clear();

@@ -34,7 +34,7 @@
      <height>231</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout"/>
+   <layout class="QVBoxLayout" name="verticalLayout_sublevelButtons"/>
   </widget>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
@@ -45,13 +45,13 @@
      <height>141</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QGridLayout" name="gridLayout_picture">
     <property name="sizeConstraint">
      <enum>QLayout::SetFixedSize</enum>
     </property>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButton_menu">
    <property name="geometry">
     <rect>
      <x>210</x>

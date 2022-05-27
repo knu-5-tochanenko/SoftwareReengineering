@@ -36,12 +36,12 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout_score">
       <item>
-       <layout class="QGridLayout" name="gridLayout_2"/>
+       <layout class="QGridLayout" name="gridLayout_star"/>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_score">
         <property name="text">
          <string/>
         </property>
@@ -50,14 +50,14 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButton_continue">
       <property name="text">
        <string>continue</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pushButton_goBack">
       <property name="text">
        <string>go back to levels</string>
       </property>

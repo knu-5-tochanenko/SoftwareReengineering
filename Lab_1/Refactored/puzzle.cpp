@@ -23,13 +23,13 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
                                   ui(new Ui::puzzle)
 {
     ui->setupUi(this);
-    ui->label->setVisible(false);
+    ui->label_congratulations->setVisible(false);
     if (Singleton::getInstance().IfLevels == true)
     {
-        ui->pushButton_2->setVisible(false);
-        ui->pushButton_3->setVisible(false);
-        ui->pushButton_4->setVisible(false);
-        ui->pushButton_5->setVisible(false);
+        ui->pushButton_toEnd->setVisible(false);
+        ui->pushButton_exit->setVisible(false);
+        ui->pushButton_back->setVisible(false);
+        ui->pushButton_forward->setVisible(false);
     }
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     show();
@@ -44,9 +44,9 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
     pixmap = pixmap.scaled(1000, 1000, Qt::IgnoreAspectRatio);
     QPixmap small = pixmap;
     small = small.scaled(200, 200, Qt::IgnoreAspectRatio);
-    QLabel *label = new QLabel;
-    label->setPixmap(small);
-    ui->gridLayout_3->addWidget(label, 0, 0);
+    QLabel *labelCongratulations = new QLabel;
+    labelCongratulations->setPixmap(small);
+    ui->gridLayout_picture->addWidget(labelCongratulations, 0, 0);
     int N = Singleton::getInstance().width;
 
     for (int i = 0; i < N * N; i++)
@@ -81,7 +81,7 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
             }
 
             ClickableLabel::connect(label, SIGNAL(clicked()), this, SLOT(pic_clicked()));
-            ui->gridLayout->addWidget(label, label->place / N, label->place % N);
+            ui->gridLayout_puzzle->addWidget(label, label->place / N, label->place % N);
         }
     }
 
@@ -123,7 +123,7 @@ void puzzle::showStep()
 
         if (places[j] != Singleton::getInstance().stepsForSorting[Singleton::getInstance().step][j] && l1 != nullptr)
         {
-            l2 = ui->gridLayout->itemAtPosition(j / N, j % N);
+            l2 = ui->gridLayout_puzzle->itemAtPosition(j / N, j % N);
 
             swapElements(l1, l2);
             l1 = nullptr;
@@ -131,7 +131,7 @@ void puzzle::showStep()
         }
         if (places[j] != Singleton::getInstance().stepsForSorting[Singleton::getInstance().step][j] && l1 == nullptr)
         {
-            l1 = ui->gridLayout->itemAtPosition(j / N, j % N);
+            l1 = ui->gridLayout_puzzle->itemAtPosition(j / N, j % N);
         }
     }
 }
@@ -156,8 +156,8 @@ void puzzle::help()
     {
         if (places[i] != i && q == false)
         {
-            QLayoutItem *l1 = ui->gridLayout->itemAtPosition(i / N, i % N);
-            QLayoutItem *l2 = ui->gridLayout->itemAtPosition(places[i] / N, places[i] % N);
+            QLayoutItem *l1 = ui->gridLayout_puzzle->itemAtPosition(i / N, i % N);
+            QLayoutItem *l2 = ui->gridLayout_puzzle->itemAtPosition(places[i] / N, places[i] % N);
             swapElements(l1, l2);
             q = true;
             break;
@@ -175,8 +175,8 @@ void puzzle::sort()
 
         if (places[j] != j)
         {
-            QLayoutItem *l1 = ui->gridLayout->itemAtPosition(j / N, j % N);
-            QLayoutItem *l2 = ui->gridLayout->itemAtPosition(places[j] / N, places[j] % N);
+            QLayoutItem *l1 = ui->gridLayout_puzzle->itemAtPosition(j / N, j % N);
+            QLayoutItem *l2 = ui->gridLayout_puzzle->itemAtPosition(places[j] / N, places[j] % N);
             swapElements(l1, l2);
             j--;
         }
@@ -198,19 +198,19 @@ void puzzle::pic_clicked()
     else
     {
         auto gp = qMakePair(-1, -1);
-        int index = ui->gridLayout->indexOf(obj);
+        int index = ui->gridLayout_puzzle->indexOf(obj);
         int rs, cs;
-        ui->gridLayout->getItemPosition(index, &gp.first, &gp.second, &rs, &cs);
+        ui->gridLayout_puzzle->getItemPosition(index, &gp.first, &gp.second, &rs, &cs);
 
         auto gp1 = qMakePair(-1, -1);
-        int index1 = ui->gridLayout->indexOf(picture1);
+        int index1 = ui->gridLayout_puzzle->indexOf(picture1);
         int rs1, cs1;
-        ui->gridLayout->getItemPosition(index1, &gp1.first, &gp1.second, &rs1, &cs1);
+        ui->gridLayout_puzzle->getItemPosition(index1, &gp1.first, &gp1.second, &rs1, &cs1);
 
-        ui->gridLayout->removeWidget(picture1);
-        ui->gridLayout->removeWidget(obj);
-        ui->gridLayout->addWidget(picture1, gp.first, gp.second);
-        ui->gridLayout->addWidget(obj, gp1.first, gp1.second);
+        ui->gridLayout_puzzle->removeWidget(picture1);
+        ui->gridLayout_puzzle->removeWidget(obj);
+        ui->gridLayout_puzzle->addWidget(picture1, gp.first, gp.second);
+        ui->gridLayout_puzzle->addWidget(obj, gp1.first, gp1.second);
 
         int var = picture1->place;
         picture1->place = obj->place;
@@ -244,7 +244,7 @@ void puzzle::pic_clicked()
 
         if (Singleton::getInstance().IfLevels == true)
         {
-            ui->label->setVisible(true);
+            ui->label_congratulations->setVisible(true);
         }
         if (Singleton::getInstance().IfLevels == true)
         {
@@ -309,7 +309,7 @@ puzzle::~puzzle()
     delete ui;
 }
 
-void puzzle::on_pushButton_clicked()
+void puzzle::on_pushButton_settings_clicked()
 {
 
     Settings w;
@@ -317,12 +317,12 @@ void puzzle::on_pushButton_clicked()
     w.exec();
 }
 
-void puzzle::on_pushButton_2_clicked()
+void puzzle::on_pushButton_toEnd_clicked()
 {
     sort();
 }
 
-void puzzle::on_pushButton_3_clicked()
+void puzzle::on_pushButton_exit_clicked()
 {
     close();
     End w;
@@ -330,12 +330,12 @@ void puzzle::on_pushButton_3_clicked()
     w.exec();
 }
 
-void puzzle::on_pushButton_5_clicked()
+void puzzle::on_pushButton_forward_clicked()
 {
     if (Singleton::getInstance().step < Singleton::getInstance().stepsForSorting.size() && Singleton::getInstance().step > 0)
     {
-        ui->pushButton_5->setEnabled(true);
-        ui->pushButton_4->setEnabled(true);
+        ui->pushButton_forward->setEnabled(true);
+        ui->pushButton_back->setEnabled(true);
     }
 
     if (Singleton::getInstance().step + 1 < Singleton::getInstance().stepsForSorting.size())
@@ -344,17 +344,17 @@ void puzzle::on_pushButton_5_clicked()
     }
     if (Singleton::getInstance().step + 1 == Singleton::getInstance().stepsForSorting.size())
     {
-        ui->pushButton_5->setEnabled(false);
+        ui->pushButton_forward->setEnabled(false);
     }
     showStep();
 }
 
-void puzzle::on_pushButton_4_clicked()
+void puzzle::on_pushButton_back_clicked()
 {
     if (Singleton::getInstance().step < Singleton::getInstance().stepsForSorting.size() && Singleton::getInstance().step > 0)
     {
-        ui->pushButton_4->setEnabled(true);
-        ui->pushButton_5->setEnabled(true);
+        ui->pushButton_back->setEnabled(true);
+        ui->pushButton_forward->setEnabled(true);
     }
     if (Singleton::getInstance().step - 1 > 0)
     {
@@ -362,7 +362,7 @@ void puzzle::on_pushButton_4_clicked()
     }
     if (Singleton::getInstance().step - 1 == 0)
     {
-        ui->pushButton_4->setEnabled(false);
+        ui->pushButton_back->setEnabled(false);
     }
     showStep();
 }

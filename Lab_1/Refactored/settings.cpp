@@ -14,12 +14,12 @@ Settings::Settings(QWidget *parent) : QDialog(parent),
     ui->setupUi(this);
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     int a = Singleton::getInstance().NumberOfStars;
-    ui->label->setText(QString::number(a));
+    ui->label_score->setText(QString::number(a));
     QPixmap pixmap(":/levels/star.png");
     pixmap = pixmap.scaled(50, 50, Qt::KeepAspectRatio);
-    QLabel *label = new QLabel;
-    label->setPixmap(pixmap);
-    ui->gridLayout_2->addWidget(label, 0, 0);
+    QLabel *labelScore = new QLabel;
+    labelScore->setPixmap(pixmap);
+    ui->gridLayout_star->addWidget(labelScore, 0, 0);
 }
 
 Settings::~Settings()
@@ -27,12 +27,12 @@ Settings::~Settings()
     delete ui;
 }
 
-void Settings::on_pushButton_clicked()
+void Settings::on_pushButton_continue_clicked()
 {
     hide();
 }
 
-void Settings::on_pushButton_2_clicked()
+void Settings::on_pushButton_goBack_clicked()
 {
     close();
     puzzle wind;

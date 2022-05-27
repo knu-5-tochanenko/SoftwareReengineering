@@ -17,10 +17,10 @@ public:
     ~forPleasure();
 
 private slots:
-    void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_4_clicked();
-    void on_pushButton_3_clicked();
+    void on_pushButton_selectPicture_clicked();
+    void on_pushButton_play_clicked();
+    void on_pushButton_menu_clicked();
+    void on_pushButton_exit_clicked();
 
 private:
     Ui::forPleasure *ui;
