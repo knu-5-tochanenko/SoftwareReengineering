@@ -13,12 +13,12 @@ authorization::authorization(QWidget *parent) : QMainWindow(parent),
     readSettings();
     ui->setupUi(this);
     int a = Singleton::getInstance().NumberOfStars;
-    ui->labelScore->setText(QString::number(a));
+    ui->label_score->setText(QString::number(a));
     QPixmap pixmap(":/levels/star.png");
     pixmap = pixmap.scaled(100, 100, Qt::KeepAspectRatio);
     QLabel *labelScore = new QLabel;
     labelScore->setPixmap(pixmap);
-    ui->gridLayout_3->addWidget(labelScore, 0, 0);
+    ui->gridLayout_label->addWidget(labelScore, 0, 0);
 
     connect(ui->pushButton_exit, SIGNAL(clicked()), this, SLOT(on_pushButton_exit_clicked()));
     connect(ui->pushButton_continue, SIGNAL(clicked()), this, SLOT(on_pushButton_continue_clicked()));

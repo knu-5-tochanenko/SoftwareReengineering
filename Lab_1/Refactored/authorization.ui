@@ -67,10 +67,10 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <layout class="QGridLayout" name="gridLayout_3"/>
+        <layout class="QGridLayout" name="gridLayout_label"/>
        </item>
        <item>
-        <widget class="QLabel" name="labelScore">
+        <widget class="QLabel" name="label_score">
          <property name="minimumSize">
           <size>
            <width>0</width>

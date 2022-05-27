@@ -12,12 +12,12 @@ End::End(QWidget *parent) : QDialog(parent),
     ui->setupUi(this);
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     int a = Singleton::getInstance().NumberOfStars;
-    ui->labelScore->setText(QString::number(a));
+    ui->label_score->setText(QString::number(a));
     QPixmap pixmap(":/levels/star.png");
     pixmap = pixmap.scaled(100, 100, Qt::KeepAspectRatio);
     QLabel *labelScore = new QLabel;
     labelScore->setPixmap(pixmap);
-    ui->gridLayout->addWidget(labelScore, 0, 0);
+    ui->gridLayout_star->addWidget(labelScore, 0, 0);
 }
 
 End::~End()

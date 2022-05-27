@@ -27,7 +27,7 @@ sublevels::sublevels(QWidget *parent) : QDialog(parent),
     pixmap = pixmap.scaled(200, 200, Qt::KeepAspectRatio);
     QLabel *label = new QLabel;
     label->setPixmap(pixmap);
-    ui->gridLayout_2->addWidget(label, 0, 0);
+    ui->gridLayout_picture->addWidget(label, 0, 0);
     int NumberOfSublevels;
     if (level == 4)
     {
@@ -47,7 +47,7 @@ sublevels::sublevels(QWidget *parent) : QDialog(parent),
     for (int i = 0; i < NumberOfSublevels; i++)
     {
         QPushButton *button = new QPushButton("picture " + QString::number(i + 1));
-        ui->verticalLayout->addWidget(button);
+        ui->verticalLayout_sublevelButtons->addWidget(button);
         QString newWay = "";
         newWay += Singleton::getInstance().wayToTheElement;
         int pos = newWay.lastIndexOf(QChar('.'));
@@ -72,7 +72,7 @@ sublevels::~sublevels()
     delete ui;
 }
 
-void sublevels::on_pushButton_clicked()
+void sublevels::on_pushButton_menu_clicked()
 {
     close();
     menu1 w;

@@ -46,7 +46,7 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout_1LevelButtons">
       <item>
        <widget class="QPushButton" name="pushButton_1Level1Sublevel">
         <property name="text">
@@ -74,7 +74,7 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_2LevelButtons">
       <item>
        <widget class="QPushButton" name="pushButton_2Level1Sublevel">
         <property name="text">
@@ -102,7 +102,7 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <layout class="QHBoxLayout" name="horizontalLayout_3LevelButtons">
       <item>
        <widget class="QPushButton" name="pushButton_3Level1Sublevel">
         <property name="text">
@@ -130,7 +130,7 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <layout class="QHBoxLayout" name="horizontalLayout_4LevelButtons">
       <item>
        <widget class="QPushButton" name="pushButton_4Level1Sublevel">
         <property name="text">
@@ -171,7 +171,7 @@
      </spacer>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <layout class="QHBoxLayout" name="horizontalLayout_pageButtons">
       <item>
        <widget class="QPushButton" name="pushButton_menu">
         <property name="text">
