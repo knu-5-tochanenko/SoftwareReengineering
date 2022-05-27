@@ -26,10 +26,10 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
     ui->label->setVisible(false);
     if (Singleton::getInstance().IfLevels == true)
     {
-        ui->pushButton_2->setVisible(false);
-        ui->pushButton_3->setVisible(false);
-        ui->pushButton_4->setVisible(false);
-        ui->pushButton_5->setVisible(false);
+        ui->pushButton_toEnd->setVisible(false);
+        ui->pushButton_exit->setVisible(false);
+        ui->pushButton_back->setVisible(false);
+        ui->pushButton_forward->setVisible(false);
     }
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     show();
@@ -309,7 +309,7 @@ puzzle::~puzzle()
     delete ui;
 }
 
-void puzzle::on_pushButton_clicked()
+void puzzle::on_pushButton_settings_clicked()
 {
 
     Settings w;
@@ -317,12 +317,12 @@ void puzzle::on_pushButton_clicked()
     w.exec();
 }
 
-void puzzle::on_pushButton_2_clicked()
+void puzzle::on_pushButton_toEnd_clicked()
 {
     sort();
 }
 
-void puzzle::on_pushButton_3_clicked()
+void puzzle::on_pushButton_exit_clicked()
 {
     close();
     End w;
@@ -330,12 +330,12 @@ void puzzle::on_pushButton_3_clicked()
     w.exec();
 }
 
-void puzzle::on_pushButton_5_clicked()
+void puzzle::on_pushButton_forward_clicked()
 {
     if (Singleton::getInstance().step < Singleton::getInstance().stepsForSorting.size() && Singleton::getInstance().step > 0)
     {
-        ui->pushButton_5->setEnabled(true);
-        ui->pushButton_4->setEnabled(true);
+        ui->pushButton_forward->setEnabled(true);
+        ui->pushButton_back->setEnabled(true);
     }
 
     if (Singleton::getInstance().step + 1 < Singleton::getInstance().stepsForSorting.size())
@@ -344,17 +344,17 @@ void puzzle::on_pushButton_5_clicked()
     }
     if (Singleton::getInstance().step + 1 == Singleton::getInstance().stepsForSorting.size())
     {
-        ui->pushButton_5->setEnabled(false);
+        ui->pushButton_forward->setEnabled(false);
     }
     showStep();
 }
 
-void puzzle::on_pushButton_4_clicked()
+void puzzle::on_pushButton_back_clicked()
 {
     if (Singleton::getInstance().step < Singleton::getInstance().stepsForSorting.size() && Singleton::getInstance().step > 0)
     {
-        ui->pushButton_4->setEnabled(true);
-        ui->pushButton_5->setEnabled(true);
+        ui->pushButton_back->setEnabled(true);
+        ui->pushButton_forward->setEnabled(true);
     }
     if (Singleton::getInstance().step - 1 > 0)
     {
@@ -362,7 +362,7 @@ void puzzle::on_pushButton_4_clicked()
     }
     if (Singleton::getInstance().step - 1 == 0)
     {
-        ui->pushButton_4->setEnabled(false);
+        ui->pushButton_back->setEnabled(false);
     }
     showStep();
 }

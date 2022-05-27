@@ -33,11 +33,11 @@ public:
 private slots:
     void updateTime();
     void pic_clicked();
-    void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_3_clicked();
-    void on_pushButton_5_clicked();
-    void on_pushButton_4_clicked();
+    void on_pushButton_settings_clicked();
+    void on_pushButton_toEnd_clicked();
+    void on_pushButton_exit_clicked();
+    void on_pushButton_forward_clicked();
+    void on_pushButton_back_clicked();
 
 private:
     Ui::puzzle *ui;
