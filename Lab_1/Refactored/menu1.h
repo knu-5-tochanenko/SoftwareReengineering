@@ -19,9 +19,9 @@ public:
     void writeSettings();
 
 private slots:
-    void on_pushButton_3_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_clicked();
+    void on_pushButton_exit_clicked();
+    void on_pushButton_forPleasure_clicked();
+    void on_pushButton_levels_clicked();
 
 private:
     Ui::menu1 *ui;

@@ -31,13 +31,13 @@ void menu1::writeSettings()
     users.endGroup();
 }
 
-void menu1::on_pushButton_3_clicked()
+void menu1::on_pushButton_exit_clicked()
 {
     writeSettings();
     hide();
 }
 
-void menu1::on_pushButton_2_clicked()
+void menu1::on_pushButton_forPleasure_clicked()
 {
     hide();
     forPleasure wind;
@@ -45,7 +45,7 @@ void menu1::on_pushButton_2_clicked()
     wind.exec();
 }
 
-void menu1::on_pushButton_clicked()
+void menu1::on_pushButton_levels_clicked()
 {
     hide();
     levels window;
