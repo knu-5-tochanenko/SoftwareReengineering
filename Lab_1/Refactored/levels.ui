@@ -39,7 +39,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButton_1Level">
       <property name="text">
        <string>1 level</string>
       </property>
@@ -48,14 +48,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="pushButton_1Level1Sublevel">
         <property name="text">
          <string>pic</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_7">
+       <widget class="QPushButton" name="pushButton_1Level2Sublevel">
         <property name="text">
          <string>pic</string>
         </property>
@@ -64,7 +64,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pushButton_2Level">
       <property name="enabled">
        <bool>false</bool>
       </property>
@@ -76,14 +76,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QPushButton" name="pushButton_8">
+       <widget class="QPushButton" name="pushButton_2Level1Sublevel">
         <property name="text">
          <string>pic</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_9">
+       <widget class="QPushButton" name="pushButton_2Level2Sublevel">
         <property name="text">
          <string>pic</string>
         </property>
@@ -92,7 +92,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="pushButton_3Level">
       <property name="enabled">
        <bool>false</bool>
       </property>
@@ -104,14 +104,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QPushButton" name="pushButton_10">
+       <widget class="QPushButton" name="pushButton_3Level1Sublevel">
         <property name="text">
          <string>pic</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_11">
+       <widget class="QPushButton" name="pushButton_3Level2Sublevel">
         <property name="text">
          <string>pic</string>
         </property>
@@ -120,7 +120,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="pushButton_4Level">
       <property name="enabled">
        <bool>false</bool>
       </property>
@@ -132,14 +132,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
-       <widget class="QPushButton" name="pushButton_12">
+       <widget class="QPushButton" name="pushButton_4Level1Sublevel">
         <property name="text">
          <string>pic</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_13">
+       <widget class="QPushButton" name="pushButton_4Level2Sublevel">
         <property name="text">
          <string>pic</string>
         </property>
@@ -148,7 +148,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="pushButton_5Level">
       <property name="enabled">
        <bool>false</bool>
       </property>
@@ -173,7 +173,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
-       <widget class="QPushButton" name="pushButton_14">
+       <widget class="QPushButton" name="pushButton_menu">
         <property name="text">
          <string>menu</string>
         </property>
@@ -193,7 +193,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_15">
+       <widget class="QPushButton" name="pushButton_exit">
         <property name="text">
          <string>exit</string>
         </property>

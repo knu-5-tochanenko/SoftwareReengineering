@@ -24,41 +24,41 @@ levels::~levels()
 
 void levels::makeInvisible()
 {
-    ui->pushButton_6->setVisible(false);
-    ui->pushButton_7->setVisible(false);
-    ui->pushButton_8->setVisible(false);
-    ui->pushButton_9->setVisible(false);
-    ui->pushButton_10->setVisible(false);
-    ui->pushButton_11->setVisible(false);
-    ui->pushButton_12->setVisible(false);
-    ui->pushButton_13->setVisible(false);
+    ui->pushButton_1Level1Sublevel->setVisible(false);
+    ui->pushButton_1Level2Sublevel->setVisible(false);
+    ui->pushButton_2Level1Sublevel->setVisible(false);
+    ui->pushButton_2Level2Sublevel->setVisible(false);
+    ui->pushButton_3Level1Sublevel->setVisible(false);
+    ui->pushButton_3Level2Sublevel->setVisible(false);
+    ui->pushButton_4Level1Sublevel->setVisible(false);
+    ui->pushButton_4Level2Sublevel->setVisible(false);
 }
 
 void levels::checkButtons()
 {
     if (Singleton::getInstance().NumberOfStars >= 10)
     {
-        ui->pushButton_2->setEnabled(true);
+        ui->pushButton_2Level->setEnabled(true);
     }
     if (Singleton::getInstance().NumberOfStars >= 25)
     {
-        ui->pushButton_3->setEnabled(true);
+        ui->pushButton_3Level->setEnabled(true);
     }
     if (Singleton::getInstance().NumberOfStars >= 45)
     {
-        ui->pushButton_4->setEnabled(true);
+        ui->pushButton_4Level->setEnabled(true);
     }
     if (Singleton::getInstance().NumberOfStars >= 100)
     {
-        ui->pushButton_5->setEnabled(true);
+        ui->pushButton_5Level->setEnabled(true);
     }
 }
 
-void levels::on_pushButton_clicked()
+void levels::on_pushButton_1Level_clicked()
 {
     makeInvisible();
-    ui->pushButton_6->setVisible(true);
-    ui->pushButton_7->setVisible(true);
+    ui->pushButton_1Level1Sublevel->setVisible(true);
+    ui->pushButton_1Level2Sublevel->setVisible(true);
 }
 
 void levels::goToPuzzle(int width, QString way, int level)
@@ -83,74 +83,74 @@ void levels::goToPuzzle(int width, QString way, int level)
     }
 }
 
-void levels::on_pushButton_2_clicked()
+void levels::on_pushButton_2Level_clicked()
 {
     makeInvisible();
-    ui->pushButton_8->setVisible(true);
-    ui->pushButton_9->setVisible(true);
+    ui->pushButton_2Level1Sublevel->setVisible(true);
+    ui->pushButton_2Level2Sublevel->setVisible(true);
 }
 
-void levels::on_pushButton_3_clicked()
+void levels::on_pushButton_3Level_clicked()
 {
     makeInvisible();
-    ui->pushButton_10->setVisible(true);
-    ui->pushButton_11->setVisible(true);
+    ui->pushButton_3Level1Sublevel->setVisible(true);
+    ui->pushButton_3Level2Sublevel->setVisible(true);
 }
 
-void levels::on_pushButton_4_clicked()
+void levels::on_pushButton_4Level_clicked()
 {
     makeInvisible();
-    ui->pushButton_12->setVisible(true);
-    ui->pushButton_13->setVisible(true);
+    ui->pushButton_4Level1Sublevel->setVisible(true);
+    ui->pushButton_4Level2Sublevel->setVisible(true);
 }
 
-void levels::on_pushButton_5_clicked()
+void levels::on_pushButton_5Level_clicked()
 {
 
     goToPuzzle(4, ":/levels/9.png", 51);
 }
 
-void levels::on_pushButton_6_clicked()
+void levels::on_pushButton_1Level1Sublevel_clicked()
 {
     goToPuzzle(2, ":/levels/1.jpg", 11);
 }
 
-void levels::on_pushButton_7_clicked()
+void levels::on_pushButton_1Level2Sublevel_clicked()
 {
     goToPuzzle(2, ":/levels/2.jpg", 12);
 }
 
-void levels::on_pushButton_8_clicked()
+void levels::on_pushButton_2Level1Sublevel_clicked()
 {
     goToPuzzle(3, ":/levels/3.jpg", 23);
 }
 
-void levels::on_pushButton_9_clicked()
+void levels::on_pushButton_2Level2Sublevel_clicked()
 {
     goToPuzzle(3, ":/levels/4.jpg", 24);
 }
 
-void levels::on_pushButton_10_clicked()
+void levels::on_pushButton_3Level1Sublevel_clicked()
 {
     goToPuzzle(3, ":/levels/5.jpg", 35);
 }
 
-void levels::on_pushButton_11_clicked()
+void levels::on_pushButton_3Level2Sublevel_clicked()
 {
     goToPuzzle(4, ":/levels/6.jpg", 36);
 }
 
-void levels::on_pushButton_12_clicked()
+void levels::on_pushButton_4Level1Sublevel_clicked()
 {
     goToPuzzle(3, ":/levels/7.jpg", 47);
 }
 
-void levels::on_pushButton_13_clicked()
+void levels::on_pushButton_4Level2Sublevel_clicked()
 {
     goToPuzzle(4, ":/levels/8.jpg", 48);
 }
 
-void levels::on_pushButton_14_clicked()
+void levels::on_pushButton_menu_clicked()
 {
     hide();
     menu1 window;
@@ -159,7 +159,7 @@ void levels::on_pushButton_14_clicked()
     window.exec();
 }
 
-void levels::on_pushButton_15_clicked()
+void levels::on_pushButton_exit_clicked()
 {
     menu1 window;
     window.writeSettings();
