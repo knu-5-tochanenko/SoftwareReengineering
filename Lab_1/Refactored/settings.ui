@@ -41,7 +41,7 @@
        <layout class="QGridLayout" name="gridLayout_2"/>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="labelScore">
         <property name="text">
          <string/>
         </property>
@@ -50,14 +50,14 @@
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButton_continue">
       <property name="text">
        <string>continue</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pushButton_goBack">
       <property name="text">
        <string>go back to levels</string>
       </property>
