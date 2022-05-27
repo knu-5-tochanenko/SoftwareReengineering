@@ -39,7 +39,7 @@
      <layout class="QGridLayout" name="gridLayout"/>
     </item>
     <item>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="labelScore">
       <property name="palette">
        <palette>
         <active>
@@ -485,7 +485,6 @@
       <property name="font">
        <font>
         <pointsize>24</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -507,21 +506,21 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pushButton_levels">
       <property name="text">
        <string>Levels</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pushButton_forPleasure">
       <property name="text">
        <string>Play for pleasure</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="pushButton_exit">
       <property name="text">
        <string>exit</string>
       </property>
