@@ -2,6 +2,7 @@
 #include "ui_authorization.h"
 #include "menu1.h"
 #include "singleton.h"
+#include "imageutils.h"
 #include <QSettings>
 #include <QDebug>
 
@@ -14,11 +15,7 @@ authorization::authorization(QWidget *parent) : QMainWindow(parent),
     ui->setupUi(this);
     int a = Singleton::getInstance().NumberOfStars;
     ui->label_score->setText(QString::number(a));
-    QPixmap pixmap(":/levels/star.png");
-    pixmap = pixmap.scaled(100, 100, Qt::KeepAspectRatio);
-    QLabel *labelScore = new QLabel;
-    labelScore->setPixmap(pixmap);
-    ui->gridLayout_label->addWidget(labelScore, 0, 0);
+    ImageUtils::bindImage(":/levels/star.png", ui->gridLayout_label, 100, 100);
 
     connect(ui->pushButton_exit, SIGNAL(clicked()), this, SLOT(on_pushButton_exit_clicked()));
     connect(ui->pushButton_continue, SIGNAL(clicked()), this, SLOT(on_pushButton_continue_clicked()));

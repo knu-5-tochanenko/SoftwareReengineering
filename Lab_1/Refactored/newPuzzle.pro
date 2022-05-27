@@ -27,6 +27,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    imageutils.cpp \
         main.cpp \
         authorization.cpp \
     menu1.cpp \
@@ -41,6 +42,7 @@ SOURCES += \
 
 HEADERS += \
         authorization.h \
+    imageutils.h \
     menu1.h \
     forpleasure.h \
     authorization.h \

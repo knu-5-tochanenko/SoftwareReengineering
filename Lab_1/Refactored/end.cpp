@@ -4,6 +4,7 @@
 #include "levels.h"
 #include "menu1.h"
 #include "forpleasure.h"
+#include "imageutils.h"
 #include <QSettings>
 
 End::End(QWidget *parent) : QDialog(parent),
@@ -13,11 +14,7 @@ End::End(QWidget *parent) : QDialog(parent),
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     int a = Singleton::getInstance().NumberOfStars;
     ui->label_score->setText(QString::number(a));
-    QPixmap pixmap(":/levels/star.png");
-    pixmap = pixmap.scaled(100, 100, Qt::KeepAspectRatio);
-    QLabel *labelScore = new QLabel;
-    labelScore->setPixmap(pixmap);
-    ui->gridLayout_star->addWidget(labelScore, 0, 0);
+    ImageUtils::bindImage(":/levels/star.png", ui->gridLayout_star, 100, 100);
 }
 
 End::~End()
