@@ -3,6 +3,7 @@
 
 #include "mainwindow.h"
 #include <QDialog>
+#include <QPushButton>
 
 namespace Ui
 {
@@ -37,6 +38,7 @@ private slots:
     void on_pushButton_4Level2Sublevel_clicked();
     void on_pushButton_menu_clicked();
     void on_pushButton_exit_clicked();
+    void showLevelButtons(QPushButton* left, QPushButton* right);
 
 private:
     Ui::levels *ui;

@@ -85,23 +85,24 @@ void levels::goToPuzzle(int width, QString way, int level)
 
 void levels::on_pushButton_2Level_clicked()
 {
-    makeInvisible();
-    ui->pushButton_2Level1Sublevel->setVisible(true);
-    ui->pushButton_2Level2Sublevel->setVisible(true);
+    showLevelButtons(ui->pushButton_2Level1Sublevel, ui->pushButton_2Level2Sublevel);
 }
 
 void levels::on_pushButton_3Level_clicked()
 {
-    makeInvisible();
-    ui->pushButton_3Level1Sublevel->setVisible(true);
-    ui->pushButton_3Level2Sublevel->setVisible(true);
+    showLevelButtons(ui->pushButton_3Level1Sublevel, ui->pushButton_3Level2Sublevel);
 }
 
 void levels::on_pushButton_4Level_clicked()
 {
+    showLevelButtons(ui->pushButton_4Level1Sublevel, ui->pushButton_4Level2Sublevel);
+}
+
+void levels::showLevelButtons(QPushButton *left, QPushButton *right)
+{
     makeInvisible();
-    ui->pushButton_4Level1Sublevel->setVisible(true);
-    ui->pushButton_4Level2Sublevel->setVisible(true);
+    left->setVisible(true);
+    right->setVisible(true);
 }
 
 void levels::on_pushButton_5Level_clicked()
