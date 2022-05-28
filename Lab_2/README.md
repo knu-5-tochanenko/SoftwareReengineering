@@ -43,3 +43,6 @@ users.endGroup();
 
 ![alt text](./images/1.png)
 
+**Екран вибору режиму:**
+
+![alt text](./images/2.png)
