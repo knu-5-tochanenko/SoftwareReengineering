@@ -24,7 +24,7 @@ sublevels::sublevels(QWidget *parent) : QDialog(parent),
         window.exec();
     }
 
-    ImageUtils::bindImage(Singleton::getInstance().wayToTheElement, ui->gridLayout_picture, 200, 200);
+    ImageUtils::bindImage<QGridLayout>(Singleton::getInstance().wayToTheElement, ui->gridLayout_picture, 200, 200);
 
     int NumberOfSublevels;
     if (level == 4)

@@ -15,7 +15,7 @@ authorization::authorization(QWidget *parent) : QMainWindow(parent),
     ui->setupUi(this);
     int a = Singleton::getInstance().NumberOfStars;
     ui->label_score->setText(QString::number(a));
-    ImageUtils::bindImage(":/levels/star.png", ui->gridLayout_label, 100, 100);
+    ImageUtils::bindImage<QGridLayout>(":/levels/star.png", ui->gridLayout_label, 100, 100);
 
     connect(ui->pushButton_exit, SIGNAL(clicked()), this, SLOT(on_pushButton_exit_clicked()));
     connect(ui->pushButton_continue, SIGNAL(clicked()), this, SLOT(on_pushButton_continue_clicked()));
