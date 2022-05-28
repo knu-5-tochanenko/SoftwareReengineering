@@ -57,9 +57,9 @@ void sublevels::clickedSlot()
 {
     Singleton::getInstance().wayToTheElement = ((QPushButton *)sender())->statusTip();
     hide();
-    puzzle wind;
-    wind.setModal(true);
-    wind.exec();
+    puzzle window;
+    window.setModal(true);
+    window.exec();
 }
 
 sublevels::~sublevels()
@@ -70,7 +70,7 @@ sublevels::~sublevels()
 void sublevels::on_pushButton_menu_clicked()
 {
     close();
-    menu1 w;
-    w.setModal(true);
-    w.exec();
+    menu1 window;
+    window.setModal(true);
+    window.exec();
 }

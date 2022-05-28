@@ -35,7 +35,7 @@ void Settings::on_pushButton_goBack_clicked()
     close();
     puzzle wind;
     wind.close();
-    levels w;
-    w.setModal(true);
-    w.exec();
+    levels window;
+    window.setModal(true);
+    window.exec();
 }
