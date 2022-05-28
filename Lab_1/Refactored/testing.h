@@ -23,10 +23,10 @@ public slots:
             arr3.push_back(8 - i);
         }
         puzzle w;
-        w.IfFinished(arr1);
-        QCOMPARE(w.IfFinished(arr1), bool(true));
-        QCOMPARE(w.IfFinished(arr2), bool(false));
-        QCOMPARE(w.IfFinished(arr3), bool(false));
+        w.ifFinished(arr1);
+        QCOMPARE(w.ifFinished(arr1), bool(true));
+        QCOMPARE(w.ifFinished(arr2), bool(false));
+        QCOMPARE(w.ifFinished(arr3), bool(false));
     }
 };
 

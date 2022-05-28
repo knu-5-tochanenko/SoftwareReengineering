@@ -16,7 +16,7 @@ forPleasure::forPleasure(QWidget *parent) : QDialog(parent),
     ui->setupUi(this);
     ui->spinBox_sort->setRange(1, 4);
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
-    Singleton::getInstance().IfLevels = false;
+    Singleton::getInstance().ifLevels = false;
 }
 
 forPleasure::~forPleasure()
@@ -56,14 +56,14 @@ void forPleasure::on_pushButton_play_clicked()
 void forPleasure::on_pushButton_menu_clicked()
 {
     hide();
-    menu1 wind;
-    wind.setModal(true);
-    wind.exec();
+    menu1 window;
+    window.setModal(true);
+    window.exec();
 }
 
 void forPleasure::on_pushButton_exit_clicked()
 {
     hide();
-    menu1 wind;
-    wind.writeSettings();
+    menu1 window;
+    window.writeSettings();
 }

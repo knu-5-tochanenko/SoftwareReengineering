@@ -19,9 +19,9 @@ public:
 
     QString wayToTheElement;
     int width;
-    bool IfLevels;
+    bool ifLevels;
     int sublevel;
-    int NumberOfStars;
+    int numberOfStars;
     int sort;
     int step;
 

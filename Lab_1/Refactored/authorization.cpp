@@ -13,8 +13,9 @@ authorization::authorization(QWidget *parent) : QMainWindow(parent),
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     readSettings();
     ui->setupUi(this);
-    int a = Singleton::getInstance().NumberOfStars;
-    ui->label_score->setText(QString::number(a));
+    ui->label_score->setText(
+                QString::number(Singleton::getInstance().numberOfStars)
+    );
     ImageUtils::bindImage<QGridLayout>(":/levels/star.png", ui->gridLayout_label, 100, 100);
 
     connect(ui->pushButton_exit, SIGNAL(clicked()), this, SLOT(on_pushButton_exit_clicked()));
@@ -26,26 +27,26 @@ void authorization::readSettings()
 {
     QSettings users("Users", "puzzle1");
     users.beginGroup("puzzle1");
-    Singleton::getInstance().NumberOfStars = users.value("numberOfStars", 0).toInt();
-    QString w = users.value("visited Levels", "").toString();
+    Singleton::getInstance().numberOfStars = users.value("numberOfStars", 0).toInt();
+    QString visitedLevels = users.value("visited Levels", "").toString();
 
-    int pos = w.lastIndexOf(QChar(';'));
+    int pos = visitedLevels.lastIndexOf(QChar(';'));
     if (pos == -1)
     {
-        Singleton::getInstance().visitedLevels.push_back(w);
+        Singleton::getInstance().visitedLevels.push_back(visitedLevels);
     }
     else
     {
         while (pos != -1)
         {
-            QString a = "";
-            for (int i = pos + 1; i < w.size(); i++)
+            QString newVisitedLevels = "";
+            for (int i = pos + 1; i < visitedLevels.size(); i++)
             {
-                a += w[i];
+                newVisitedLevels += visitedLevels[i];
             }
-            w = w.left(pos);
-            Singleton::getInstance().visitedLevels.push_back(a);
-            pos = w.lastIndexOf(QChar(';'));
+            visitedLevels = visitedLevels.left(pos);
+            Singleton::getInstance().visitedLevels.push_back(newVisitedLevels);
+            pos = visitedLevels.lastIndexOf(QChar(';'));
         }
     }
     users.endGroup();
@@ -72,7 +73,7 @@ void authorization::on_pushButton_exit_clicked()
 
 void authorization::on_pushButton_newGame_clicked()
 {
-    Singleton::getInstance().NumberOfStars = 0;
+    Singleton::getInstance().numberOfStars = 0;
     Singleton::getInstance().wayToTheElement.clear();
     hide();
     menu1 window;
