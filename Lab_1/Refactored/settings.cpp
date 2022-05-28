@@ -5,6 +5,7 @@
 #include "ui_settings.h"
 #include "puzzle.h"
 #include "levels.h"
+#include "imageutils.h"
 #include <QStyle>
 #include <QSettings>
 
@@ -15,11 +16,7 @@ Settings::Settings(QWidget *parent) : QDialog(parent),
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     int a = Singleton::getInstance().NumberOfStars;
     ui->label_score->setText(QString::number(a));
-    QPixmap pixmap(":/levels/star.png");
-    pixmap = pixmap.scaled(50, 50, Qt::KeepAspectRatio);
-    QLabel *labelScore = new QLabel;
-    labelScore->setPixmap(pixmap);
-    ui->gridLayout_star->addWidget(labelScore, 0, 0);
+    ImageUtils::bindImage<QGridLayout>(":/levels/star.png", ui->gridLayout_star, 50, 50);
 }
 
 Settings::~Settings()

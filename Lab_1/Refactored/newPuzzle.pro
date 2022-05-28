@@ -33,7 +33,6 @@ SOURCES += \
     forpleasure.cpp \
     puzzle.cpp \
     clickablelabel.cpp \
-    singleton.cpp \
     levels.cpp \
     sublevels.cpp \
     settings.cpp \
@@ -41,6 +40,7 @@ SOURCES += \
 
 HEADERS += \
         authorization.h \
+    imageutils.h \
     menu1.h \
     forpleasure.h \
     authorization.h \

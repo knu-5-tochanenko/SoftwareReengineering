@@ -5,6 +5,7 @@
 #include "levels.h"
 #include "menu1.h"
 #include "ui_sublevels.h"
+#include "imageutils.h"
 #include <QMessageBox>
 #include <QDebug>
 #include <QSettings>
@@ -23,11 +24,8 @@ sublevels::sublevels(QWidget *parent) : QDialog(parent),
         window.exec();
     }
 
-    QPixmap pixmap(Singleton::getInstance().wayToTheElement);
-    pixmap = pixmap.scaled(200, 200, Qt::KeepAspectRatio);
-    QLabel *label = new QLabel;
-    label->setPixmap(pixmap);
-    ui->gridLayout_picture->addWidget(label, 0, 0);
+    ImageUtils::bindImage<QGridLayout>(Singleton::getInstance().wayToTheElement, ui->gridLayout_picture, 200, 200);
+
     int NumberOfSublevels;
     if (level == 4)
     {

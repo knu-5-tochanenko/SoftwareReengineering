@@ -4,7 +4,9 @@
 #include "menu1.h"
 #include "puzzle.h"
 #include "singleton.h"
+#include "imageutils.h"
 #include <QFileDialog>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QPixmap>
 
@@ -39,9 +41,7 @@ void forPleasure::on_pushButton_selectPicture_clicked()
     QPixmap pixmap(fileName);
     Singleton::getInstance().width = ui->spinBox_puzzleSize->value();
     pixmap = pixmap.scaled(200, 200, Qt::KeepAspectRatio);
-    QLabel *label = new QLabel;
-    label->setPixmap(pixmap);
-    ui->horizontalLayout_picture->addWidget(label);
+    ImageUtils::bindPixmap<QBoxLayout>(pixmap, ui->horizontalLayout_picture);
 }
 
 void forPleasure::on_pushButton_play_clicked()
