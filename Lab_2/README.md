@@ -56,3 +56,7 @@ users.endGroup();
 Дизайн був залишений орігінальний.
 
 ![alt text](./images/4.png)
+
+**Екран паззлу:**
+
+![alt text](./images/5.png)

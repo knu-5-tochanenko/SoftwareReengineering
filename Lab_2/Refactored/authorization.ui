@@ -147,7 +147,7 @@
         </size>
        </property>
        <property name="text">
-        <string>new game</string>
+        <string>New Game</string>
        </property>
       </widget>
      </item>
@@ -173,7 +173,7 @@
         </size>
        </property>
        <property name="text">
-        <string>continue</string>
+        <string>Continue</string>
        </property>
       </widget>
      </item>
@@ -199,7 +199,7 @@
         </size>
        </property>
        <property name="text">
-        <string>exit</string>
+        <string>EXIT</string>
        </property>
       </widget>
      </item>
