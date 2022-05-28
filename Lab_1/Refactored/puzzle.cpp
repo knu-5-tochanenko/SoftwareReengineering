@@ -63,8 +63,6 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
             ClickableLabel *label = new ClickableLabel();
             label->place = places[i * N + j];
             label->index = (i)*N + j;
-            qDebug() << label->index;
-            qDebug() << label->place;
 
             QRect rect(j * 1000 / N, i * 1000 / N, 1000 / N, 1000 / N);
             QPixmap cropped = pixmap.copy(rect);

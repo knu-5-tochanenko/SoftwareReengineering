@@ -69,6 +69,8 @@ int main(int argc, char *argv[])
 
 ### 3. Вилучення дубльованого коду
 
+Повні зміни [у мердж реквесті](https://github.com/knu-5-tochanenko/SoftwareReengineering/pull/3/files).
+
 Прикладом дубльованого коду є додавання зображення у об'єкт в UI:
 
 ```cpp
