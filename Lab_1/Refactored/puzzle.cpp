@@ -24,7 +24,7 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
 {
     ui->setupUi(this);
     ui->label_congratulations->setVisible(false);
-    if (Singleton::getInstance().IfLevels)
+    if (Singleton::getInstance().ifLevels)
     {
         ui->pushButton_toEnd->setVisible(false);
         ui->pushButton_exit->setVisible(false);
@@ -83,7 +83,7 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
         }
     }
 
-    if (!Singleton::getInstance().IfLevels)
+    if (!Singleton::getInstance().ifLevels)
     {
         Singleton::getInstance().stepsForSorting.clear();
         SortFactory *sortFactory = new QuickFactory();
@@ -207,9 +207,9 @@ void puzzle::pic_clicked()
         ui->gridLayout_puzzle->addWidget(picture1, gp.first, gp.second);
         ui->gridLayout_puzzle->addWidget(obj, gp1.first, gp1.second);
 
-        int var = picture1->place;
+        int subSwap = picture1->place;
         picture1->place = obj->place;
-        obj->place = var;
+        obj->place = subSwap;
 
         places[picture1->index] = picture1->place;
         places[obj->index] = obj->place;
@@ -234,24 +234,24 @@ void puzzle::pic_clicked()
         picture1 = NULL;
     }
 
-    if (IfFinished(places))
+    if (ifFinished(places))
     {
 
-        if (Singleton::getInstance().IfLevels == true)
+        if (Singleton::getInstance().ifLevels == true)
         {
             ui->label_congratulations->setVisible(true);
         }
-        if (Singleton::getInstance().IfLevels == true)
+        if (Singleton::getInstance().ifLevels == true)
         {
-            bool a = false;
-            for (int i = 0; i < Singleton::getInstance().visitedLevels.size() && a; i++)
+            bool currentSublevel = false;
+            for (int i = 0; i < Singleton::getInstance().visitedLevels.size() && currentSublevel; i++)
             {
                 if (Singleton::getInstance().visitedLevels[i] == Singleton::getInstance().sublevel)
                 {
-                    a = true;
+                    currentSublevel = true;
                 }
             }
-            if (a == false)
+            if (currentSublevel == false)
             {
                 bool ifNew = true;
                 for (int i = 0; i < Singleton::getInstance().visitedLevels.size() && ifNew; i++)
@@ -263,35 +263,35 @@ void puzzle::pic_clicked()
                 }
                 if (ifNew)
                 {
-                    Singleton::getInstance().NumberOfStars += 5;
+                    Singleton::getInstance().numberOfStars += 5;
                 }
                 Singleton::getInstance().visitedLevels.push_back(Singleton::getInstance().wayToTheElement);
             }
         }
-        if (Singleton::getInstance().IfLevels)
+        if (Singleton::getInstance().ifLevels)
         {
             close();
             End w;
             w.setModal(true);
             w.exec();
         }
-        Singleton::getInstance().IfLevels = false;
+        Singleton::getInstance().ifLevels = false;
         Singleton::getInstance().wayToTheElement = nullptr;
         Singleton::getInstance().sublevel = 0;
     }
 }
 
-bool puzzle::IfFinished(QVector<int> places)
+bool puzzle::ifFinished(QVector<int> places)
 {
-    int trueN = 0;
+    int correctTiles = 0;
     for (int i = 0; i < places.size(); i++)
     {
         if (places[i] == i)
         {
-            trueN++;
+            correctTiles++;
         }
     }
-    return trueN == places.size();
+    return correctTiles == places.size();
 }
 
 puzzle::~puzzle()
@@ -302,9 +302,9 @@ puzzle::~puzzle()
 void puzzle::on_pushButton_settings_clicked()
 {
 
-    Settings w;
-    w.setModal(true);
-    w.exec();
+    Settings window;
+    window.setModal(true);
+    window.exec();
 }
 
 void puzzle::on_pushButton_toEnd_clicked()
@@ -315,9 +315,9 @@ void puzzle::on_pushButton_toEnd_clicked()
 void puzzle::on_pushButton_exit_clicked()
 {
     close();
-    End w;
-    w.setModal(true);
-    w.exec();
+    End window;
+    window.setModal(true);
+    window.exec();
 }
 
 void puzzle::on_pushButton_forward_clicked()

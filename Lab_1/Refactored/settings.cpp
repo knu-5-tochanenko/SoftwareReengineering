@@ -14,8 +14,9 @@ Settings::Settings(QWidget *parent) : QDialog(parent),
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
-    int a = Singleton::getInstance().NumberOfStars;
-    ui->label_score->setText(QString::number(a));
+    ui->label_score->setText(
+                QString::number(Singleton::getInstance().numberOfStars)
+    );
     ImageUtils::bindImage<QGridLayout>(":/levels/star.png", ui->gridLayout_star, 50, 50);
 }
 

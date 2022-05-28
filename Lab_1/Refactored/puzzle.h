@@ -26,9 +26,8 @@ public:
     void swapElements(QLayoutItem *l1, QLayoutItem *l2);
     void sort();
     void help();
-    bool IfFinished(QVector<int> places);
+    bool ifFinished(QVector<int> places);
     void showStep();
-    void NewSort(QVariant a);
 
 private slots:
     void updateTime();

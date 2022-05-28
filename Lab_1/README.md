@@ -115,6 +115,8 @@ void levels::on_pushButton_4_clicked()
 }
 ```
 
+:arrow_down:
+
 ```cpp
 void levels::on_pushButton_2Level_clicked()
 {
@@ -134,6 +136,8 @@ void levels::on_pushButton_4Level_clicked()
 
 ### 4. Оптимізація циклів і структур розгалудження
 
+Повні зміни [у мердж реквесті](https://github.com/knu-5-tochanenko/SoftwareReengineering/pull/4/files).
+
 Змінна `q` під час виконання циклу змінюється на `true`, що робить входження програми у блок `if` неможливим до самого кінця виконання циклу. Таким чином необхідно або прибрати конструкцію `break` і додати умову завершення циклу при `q == true`, або прибрати змінну `q` взагалі:
 
 ```cpp
@@ -151,6 +155,8 @@ void puzzle::help()
     }
 }
 ```
+
+:arrow_down:
 
 ```cpp
 void puzzle::help()
@@ -175,6 +181,8 @@ if (Singleton::getInstance().IfLevels == true)
 }
 ```
 
+:arrow_down:
+
 ```cpp
 if (Singleton::getInstance().IfLevels)
 {
@@ -194,6 +202,8 @@ for (int i = 0; i < Singleton::getInstance().visitedLevels.size(); i++)
     }
 }
 ```
+
+:arrow_down:
 
 ```cpp
 bool a = false;
@@ -226,6 +236,8 @@ bool puzzle::IfFinished(QVector<int> places)
 }
 ```
 
+:arrow_down:
+
 ```cpp
 bool puzzle::IfFinished(QVector<int> places)
 {
@@ -257,6 +269,8 @@ else
 }
 ```
 
+:arrow_down:
+
 ```cpp
 if (level == 4)
 {
@@ -270,4 +284,65 @@ else
 {
     NumberOfSublevels = level;
 }
+```
+
+### 5. Перейменування змінних або їх прибирання
+
+Повні зміни [у мердж реквесті](https://github.com/knu-5-tochanenko/SoftwareReengineering/pull/5/files).
+
+Деякі змінні використовуються для одноразового отримання результату. У данному прикладі її можна прибрати:
+
+```cpp
+int a = Singleton::getInstance().NumberOfStars;
+ui->label_score->setText(QString::number(a));
+```
+
+:arrow_down:
+
+```cpp
+ui->label_score->setText(
+    QString::number(Singleton::getInstance().NumberOfStars)
+);
+```
+
+Деякі змінні мають назву, яка зовсім не відноситься до їх призначення:
+
+```cpp
+int trueN = 0;
+for (int i = 0; i < places.size(); i++)
+{
+    if (places[i] == i)
+    {
+        trueN++;
+    }
+}
+return trueN == places.size();
+```
+
+:arrow_down:
+
+```cpp
+int correctTiles = 0;
+for (int i = 0; i < places.size(); i++)
+{
+    if (places[i] == i)
+    {
+        correctTiles++;
+    }
+}
+return correctTiles == places.size();
+```
+
+Деякі змінні мають назву, яка не співпадає зі стандартним неймінгом змінних:
+
+```cpp
+int IfLevels;
+int NumberOfStars;
+```
+
+:arrow_down:
+
+```cpp
+int ifLevels;
+int numberOfStars;
 ```

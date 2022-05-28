@@ -14,7 +14,7 @@ levels::levels(QWidget *parent) : QDialog(parent),
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
     makeInvisible();
     checkButtons();
-    Singleton::getInstance().IfLevels = true;
+    Singleton::getInstance().ifLevels = true;
 }
 
 levels::~levels()
@@ -36,19 +36,19 @@ void levels::makeInvisible()
 
 void levels::checkButtons()
 {
-    if (Singleton::getInstance().NumberOfStars >= 10)
+    if (Singleton::getInstance().numberOfStars >= 10)
     {
         ui->pushButton_2Level->setEnabled(true);
     }
-    if (Singleton::getInstance().NumberOfStars >= 25)
+    if (Singleton::getInstance().numberOfStars >= 25)
     {
         ui->pushButton_3Level->setEnabled(true);
     }
-    if (Singleton::getInstance().NumberOfStars >= 45)
+    if (Singleton::getInstance().numberOfStars >= 45)
     {
         ui->pushButton_4Level->setEnabled(true);
     }
-    if (Singleton::getInstance().NumberOfStars >= 100)
+    if (Singleton::getInstance().numberOfStars >= 100)
     {
         ui->pushButton_5Level->setEnabled(true);
     }

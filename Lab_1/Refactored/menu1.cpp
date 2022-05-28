@@ -17,17 +17,17 @@ void menu1::writeSettings()
 {
     QSettings users("Users", "puzzle1");
     users.beginGroup("puzzle1");
-    users.setValue("numberOfStars", Singleton::getInstance().NumberOfStars);
-    QString Visited = "";
+    users.setValue("numberOfStars", Singleton::getInstance().numberOfStars);
+    QString visited = "";
     for (int i = 0; i < Singleton::getInstance().visitedLevels.size(); i++)
     {
-        Visited += Singleton::getInstance().visitedLevels[i];
+        visited += Singleton::getInstance().visitedLevels[i];
         if (i + 1 < Singleton::getInstance().visitedLevels.size())
         {
-            Visited += ";";
+            visited += ";";
         }
     }
-    users.setValue("visited Levels", Visited);
+    users.setValue("visited Levels", visited);
     users.endGroup();
 }
 
@@ -40,9 +40,9 @@ void menu1::on_pushButton_exit_clicked()
 void menu1::on_pushButton_forPleasure_clicked()
 {
     hide();
-    forPleasure wind;
-    wind.setModal(true);
-    wind.exec();
+    forPleasure window;
+    window.setModal(true);
+    window.exec();
 }
 
 void menu1::on_pushButton_levels_clicked()

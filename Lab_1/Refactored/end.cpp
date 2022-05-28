@@ -12,8 +12,9 @@ End::End(QWidget *parent) : QDialog(parent),
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
-    int a = Singleton::getInstance().NumberOfStars;
-    ui->label_score->setText(QString::number(a));
+    ui->label_score->setText(
+                QString::number(Singleton::getInstance().numberOfStars)
+    );
     ImageUtils::bindImage<QGridLayout>(":/levels/star.png", ui->gridLayout_star, 100, 100);
 }
 
@@ -25,22 +26,22 @@ End::~End()
 void End::on_pushButton_forPleasure_clicked()
 {
     hide();
-    forPleasure w;
-    w.setModal(true);
-    w.exec();
+    forPleasure window;
+    window.setModal(true);
+    window.exec();
 }
 
 void End::on_pushButton_levels_clicked()
 {
     hide();
-    levels w;
-    w.setModal(true);
-    w.exec();
+    levels window;
+    window.setModal(true);
+    window.exec();
 }
 
 void End::on_pushButton_exit_clicked()
 {
-    menu1 wind;
-    wind.writeSettings();
+    menu1 window;
+    window.writeSettings();
     hide();
 }
