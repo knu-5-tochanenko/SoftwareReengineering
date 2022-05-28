@@ -71,10 +71,26 @@ void authorization::on_pushButton_exit_clicked()
     hide();
 }
 
+void clearData() {
+    Singleton::getInstance().wayToTheElement.clear();
+    Singleton::getInstance().width = NULL;
+    Singleton::getInstance().ifLevels = NULL;
+    Singleton::getInstance().sublevel = NULL;
+    Singleton::getInstance().numberOfStars = 0;
+    Singleton::getInstance().sort = NULL;
+    Singleton::getInstance().step = NULL;
+    Singleton::getInstance().stepsForSorting.clear();
+    Singleton::getInstance().visitedLevels.clear();
+
+    QSettings users("Users", "puzzle1");
+    users.beginGroup("puzzle1");
+    users.remove("");
+    users.endGroup();
+}
+
 void authorization::on_pushButton_newGame_clicked()
 {
-    Singleton::getInstance().numberOfStars = 0;
-    Singleton::getInstance().wayToTheElement.clear();
+    clearData();
     hide();
     menu1 window;
     window.setModal(true);
