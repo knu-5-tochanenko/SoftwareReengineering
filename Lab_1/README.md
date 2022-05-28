@@ -131,3 +131,143 @@ void levels::on_pushButton_4Level_clicked()
     showLevelButtons(ui->pushButton_4Level1Sublevel, ui->pushButton_4Level2Sublevel);
 }
 ```
+
+### 4. Оптимізація циклів і структур розгалудження
+
+Змінна `q` під час виконання циклу змінюється на `true`, що робить входження програми у блок `if` неможливим до самого кінця виконання циклу. Таким чином необхідно або прибрати конструкцію `break` і додати умову завершення циклу при `q == true`, або прибрати змінну `q` взагалі:
+
+```cpp
+void puzzle::help()
+{
+    bool q = false;
+    for (int i = 0; i < places.size(); i++)
+    {
+        if (places[i] != i && q == false)
+        {
+            /* ... */
+            q = true;
+            break;
+        }
+    }
+}
+```
+
+```cpp
+void puzzle::help()
+{
+    for (int i = 0; i < places.size(); i++)
+    {
+        if (places[i] != i)
+        {
+            /* ... */
+            break;
+        }
+    }
+}
+```
+
+У наступному прикладі порівняння змінної із значенням `true` непотрібна, адже вона і так є змінною типу `bool`:
+
+```cpp
+if (Singleton::getInstance().IfLevels == true)
+{
+    /* ... */
+}
+```
+
+```cpp
+if (Singleton::getInstance().IfLevels)
+{
+    /* ... */
+}
+```
+
+У наступному прикладі необхідно знайти чи є підрівень пройденим чи ні. Для цього використовується змінна `a`. При проходженні усіх пройдених рівнів можливий такий випадок, що підрівень був пройдений на одній із перших ітерацій циклу. Необхідно, щоби він перестав виконуватись одразу як змінна `a` стане дорівнювати `true`:
+
+```cpp
+bool a = false;
+for (int i = 0; i < Singleton::getInstance().visitedLevels.size(); i++)
+{
+    if (Singleton::getInstance().visitedLevels[i] == Singleton::getInstance().sublevel)
+    {
+        a = true;
+    }
+}
+```
+
+```cpp
+bool a = false;
+for (int i = 0; i < Singleton::getInstance().visitedLevels.size() && a; i++)
+{
+    if (Singleton::getInstance().visitedLevels[i] == Singleton::getInstance().sublevel)
+    {
+        a = true;
+    }
+}
+```
+
+У наступному прикладі функція повертає `true` або `false` в залежності від значення змінної `trueN`, тому структура `if` тут зайва, можна просто повернути значення порівняння:
+
+```cpp
+bool puzzle::IfFinished(QVector<int> places)
+{
+    int trueN = 0;
+    
+    /* ... */
+
+    if (trueN == places.size())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+```
+
+```cpp
+bool puzzle::IfFinished(QVector<int> places)
+{
+    int trueN = 0;
+    
+    /* ... */
+
+    return trueN == places.size();
+}
+```
+
+У прикладі нижче було прибрана зайва вкладеність:
+
+```cpp
+if (level == 4)
+{
+    NumberOfSublevels = 5;
+}
+else
+{
+    if (level == 1 || level == 5)
+    {
+        NumberOfSublevels = 0;
+    }
+    else
+    {
+        NumberOfSublevels = level;
+    }
+}
+```
+
+```cpp
+if (level == 4)
+{
+    NumberOfSublevels = 5;
+}
+else if (level == 1 || level == 5)
+{
+    NumberOfSublevels = 0;
+}
+else
+{
+    NumberOfSublevels = level;
+}
+```

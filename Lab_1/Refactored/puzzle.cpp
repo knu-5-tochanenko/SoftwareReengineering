@@ -24,7 +24,7 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
 {
     ui->setupUi(this);
     ui->label_congratulations->setVisible(false);
-    if (Singleton::getInstance().IfLevels == true)
+    if (Singleton::getInstance().IfLevels)
     {
         ui->pushButton_toEnd->setVisible(false);
         ui->pushButton_exit->setVisible(false);
@@ -149,15 +149,13 @@ void puzzle::swapElements(QLayoutItem *l1, QLayoutItem *l2)
 
 void puzzle::help()
 {
-    bool q = false;
     for (int i = 0; i < places.size(); i++)
     {
-        if (places[i] != i && q == false)
+        if (places[i] != i)
         {
             QLayoutItem *l1 = ui->gridLayout_puzzle->itemAtPosition(i / N, i % N);
             QLayoutItem *l2 = ui->gridLayout_puzzle->itemAtPosition(places[i] / N, places[i] % N);
             swapElements(l1, l2);
-            q = true;
             break;
         }
     }
@@ -170,7 +168,6 @@ void puzzle::sort()
     int j;
     for (j = 0; j < n; j++)
     {
-
         if (places[j] != j)
         {
             QLayoutItem *l1 = ui->gridLayout_puzzle->itemAtPosition(j / N, j % N);
@@ -247,7 +244,7 @@ void puzzle::pic_clicked()
         if (Singleton::getInstance().IfLevels == true)
         {
             bool a = false;
-            for (int i = 0; i < Singleton::getInstance().visitedLevels.size(); i++)
+            for (int i = 0; i < Singleton::getInstance().visitedLevels.size() && a; i++)
             {
                 if (Singleton::getInstance().visitedLevels[i] == Singleton::getInstance().sublevel)
                 {
@@ -257,10 +254,12 @@ void puzzle::pic_clicked()
             if (a == false)
             {
                 bool ifNew = true;
-                for (int i = 0; i < Singleton::getInstance().visitedLevels.size(); i++)
+                for (int i = 0; i < Singleton::getInstance().visitedLevels.size() && ifNew; i++)
                 {
                     if (Singleton::getInstance().wayToTheElement == Singleton::getInstance().visitedLevels[i])
+                    {
                         ifNew = false;
+                    }
                 }
                 if (ifNew)
                 {
@@ -269,7 +268,7 @@ void puzzle::pic_clicked()
                 Singleton::getInstance().visitedLevels.push_back(Singleton::getInstance().wayToTheElement);
             }
         }
-        if (Singleton::getInstance().IfLevels == true)
+        if (Singleton::getInstance().IfLevels)
         {
             close();
             End w;
@@ -292,14 +291,7 @@ bool puzzle::IfFinished(QVector<int> places)
             trueN++;
         }
     }
-    if (trueN == places.size())
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return trueN == places.size();
 }
 
 puzzle::~puzzle()
