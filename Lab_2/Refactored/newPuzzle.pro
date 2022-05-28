@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT += testlib
+QT += quickcontrols2
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -95,7 +96,8 @@ DISTFILES += \
     4/85.jpg \
     5/9.png \
     back.jpg \
-    star.png
+    star.png \
+    style.qss
 
 RESOURCES += \
     levels.qrc

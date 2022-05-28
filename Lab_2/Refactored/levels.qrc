@@ -32,4 +32,7 @@
         <file alias="back.jpg">back.jpg</file>
         <file alias="star.png">star.png</file>
     </qresource>
+    <qresource prefix="/styles">
+        <file>orange.qss</file>
+    </qresource>
 </RCC>
