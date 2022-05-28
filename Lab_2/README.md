@@ -46,3 +46,7 @@ users.endGroup();
 **Екран вибору режиму:**
 
 ![alt text](./images/2.png)
+
+**Екран вибору рівня:**
+
+![alt text](./images/3.png)
