@@ -236,3 +236,38 @@ bool puzzle::IfFinished(QVector<int> places)
     return trueN == places.size();
 }
 ```
+
+У прикладі нижче було прибрана зайва вкладеність:
+
+```cpp
+if (level == 4)
+{
+    NumberOfSublevels = 5;
+}
+else
+{
+    if (level == 1 || level == 5)
+    {
+        NumberOfSublevels = 0;
+    }
+    else
+    {
+        NumberOfSublevels = level;
+    }
+}
+```
+
+```cpp
+if (level == 4)
+{
+    NumberOfSublevels = 5;
+}
+else if (level == 1 || level == 5)
+{
+    NumberOfSublevels = 0;
+}
+else
+{
+    NumberOfSublevels = level;
+}
+```

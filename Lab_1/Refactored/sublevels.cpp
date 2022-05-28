@@ -31,16 +31,13 @@ sublevels::sublevels(QWidget *parent) : QDialog(parent),
     {
         NumberOfSublevels = 5;
     }
+    else if (level == 1 || level == 5)
+    {
+        NumberOfSublevels = 0;
+    }
     else
     {
-        if (level == 1 || level == 5)
-        {
-            NumberOfSublevels = 0;
-        }
-        else
-        {
-            NumberOfSublevels = level;
-        }
+        NumberOfSublevels = level;
     }
     for (int i = 0; i < NumberOfSublevels; i++)
     {
