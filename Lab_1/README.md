@@ -82,7 +82,7 @@ ui->gridLayout_star->addWidget(labelScore, 0, 0);
 На прикладі цього було розроблено допоміжний клас, який спрощує використання до:
 
 ```cpp
-ImageUtils::bindImage(":/levels/star.png", ui->gridLayout_star, 50, 50);
+ImageUtils::bindImage<QGridLayout>(":/levels/star.png", ui->gridLayout_star, 50, 50);
 ```
 
 Другий приклад у класі `Levels`:
