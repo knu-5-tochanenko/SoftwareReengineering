@@ -66,4 +66,5 @@ void forPleasure::on_pushButton_exit_clicked()
     hide();
     menu1 window;
     window.writeSettings();
+    QApplication::quit();
 }

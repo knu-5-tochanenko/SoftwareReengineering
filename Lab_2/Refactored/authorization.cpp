@@ -68,6 +68,7 @@ void authorization::on_pushButton_continue_clicked()
 void authorization::on_pushButton_exit_clicked()
 {
     hide();
+    QApplication::quit();
 }
 
 void clearData() {

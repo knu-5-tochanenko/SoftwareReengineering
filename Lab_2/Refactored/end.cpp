@@ -44,4 +44,5 @@ void End::on_pushButton_exit_clicked()
     menu1 window;
     window.writeSettings();
     hide();
+    QApplication::quit();
 }
