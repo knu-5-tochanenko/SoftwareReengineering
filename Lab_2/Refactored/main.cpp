@@ -3,7 +3,6 @@
 #include <QApplication>
 #include <QDialog>
 #include <QString>
-#include <QDebug>
 #include <QSettings>
 #include <QQuickStyle>
 #include <QFile>

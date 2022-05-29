@@ -5,7 +5,6 @@
 #include "singleton.h"
 #include "puzzle.h"
 #include <algorithm>
-#include <QDebug>
 #include <QtAlgorithms>
 
 class Sort
@@ -34,7 +33,6 @@ public:
             QVector<int> array;
             for (int i = 0; i < data.size(); i++)
             {
-                qDebug() << data[i];
                 array.push_back(data[i]);
             }
             Singleton::getInstance().stepsForSorting.push_back(array);
@@ -62,7 +60,6 @@ public:
                     QVector<int> array;
                     for (int i = 0; i < arr.size(); i++)
                     {
-                        qDebug() << arr[i];
                         array.push_back(arr[i]);
                     }
                     Singleton::getInstance().stepsForSorting.push_back(array);
@@ -89,7 +86,6 @@ public:
         QVector<int> array;
         for (int i = 0; i < vHeap.size(); i++)
         {
-            qDebug() << vHeap[i];
             array.push_back(vHeap[i]);
         }
         Singleton::getInstance().stepsForSorting.push_back(array);
@@ -162,7 +158,6 @@ public:
                 QVector<int> array;
                 for (int i = 0; i < a.size(); i++)
                 {
-                    qDebug() << a[i];
                     array.push_back(a[i]);
                 }
                 Singleton::getInstance().stepsForSorting.push_back(array);
@@ -178,7 +173,6 @@ public:
         QVector<int> array;
         for (int i = 0; i < a.size(); i++)
         {
-            qDebug() << a[i];
             array.push_back(a[i]);
         }
         Singleton::getInstance().stepsForSorting.push_back(array);

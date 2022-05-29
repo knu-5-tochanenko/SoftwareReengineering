@@ -11,10 +11,8 @@
 #include <QPainter>
 #include <QPointF>
 #include <algorithm>
-#include <QDebug>
 #include <QStyle>
 #include <QMouseEvent>
-#include <QDebug>
 #include <QSettings>
 #include <QThread>
 
@@ -124,7 +122,6 @@ void puzzle::showStep()
     N = Singleton::getInstance().width;
     for (int j = 0; j < places.size(); j++)
     {
-
         if (places[j] != Singleton::getInstance().stepsForSorting[Singleton::getInstance().step][j] && l1 != nullptr)
         {
             l2 = ui->gridLayout_puzzle->itemAtPosition(j / N, j % N);
@@ -242,13 +239,9 @@ void puzzle::pic_clicked()
 
     if (ifFinished(places))
     {
-
-        if (Singleton::getInstance().ifLevels == true)
+        if (Singleton::getInstance().ifLevels)
         {
             ui->label_congratulations->setVisible(true);
-        }
-        if (Singleton::getInstance().ifLevels == true)
-        {
             bool currentSublevel = false;
             for (int i = 0; i < Singleton::getInstance().visitedLevels.size() && currentSublevel; i++)
             {
@@ -257,7 +250,7 @@ void puzzle::pic_clicked()
                     currentSublevel = true;
                 }
             }
-            if (currentSublevel == false)
+            if (!currentSublevel)
             {
                 bool ifNew = true;
                 for (int i = 0; i < Singleton::getInstance().visitedLevels.size() && ifNew; i++)
@@ -270,16 +263,12 @@ void puzzle::pic_clicked()
                 if (ifNew)
                 {
                     Singleton::getInstance().numberOfStars += 5;
+                    ui->label_score->setText(
+                                QString::number(Singleton::getInstance().numberOfStars)
+                    );
                 }
                 Singleton::getInstance().visitedLevels.push_back(Singleton::getInstance().wayToTheElement);
             }
-        }
-        if (Singleton::getInstance().ifLevels)
-        {
-            close();
-            End w;
-            w.setModal(true);
-            w.exec();
         }
         Singleton::getInstance().ifLevels = false;
         Singleton::getInstance().wayToTheElement = nullptr;
