@@ -32,6 +32,7 @@ public:
     template<class T>
     static void bindPixmap(QPixmap pixmap, T* object)
     {
+        clearLayout(object);
         QLabel *labelScore = new QLabel;
         labelScore->setPixmap(pixmap);
         if (typeid(object) == typeid(QGridLayout*))
@@ -41,6 +42,21 @@ public:
         else if (typeid(object) == typeid(QBoxLayout*))
         {
             dynamic_cast<QBoxLayout*>(object)->addWidget(labelScore);
+        }
+    }
+
+    static void clearLayout(QLayout* layout, bool deleteWidgets = true)
+    {
+        while (QLayoutItem* item = layout->takeAt(0))
+        {
+            if (deleteWidgets)
+            {
+                if (QWidget* widget = item->widget())
+                    widget->deleteLater();
+            }
+            if (QLayout* childLayout = item->layout())
+                clearLayout(childLayout, deleteWidgets);
+            delete item;
         }
     }
 };
