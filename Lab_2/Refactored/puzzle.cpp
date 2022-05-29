@@ -4,6 +4,8 @@
 #include "end.h"
 #include "settings.h"
 #include "sortfactory.h"
+#include "levels.h"
+#include "imageutils.h"
 #include <QFileDialog>
 #include <QWidget>
 #include <QVector>
@@ -48,6 +50,11 @@ puzzle::puzzle(QWidget *parent) : QDialog(parent),
     labelCongratulations->setPixmap(small);
     ui->gridLayout_picture->addWidget(labelCongratulations, 0, 0);
     int N = Singleton::getInstance().width;
+
+    ui->label_score->setText(
+                QString::number(Singleton::getInstance().numberOfStars)
+    );
+    ImageUtils::bindImage<QGridLayout>(":/levels/star.png", ui->gridLayout_star, 50, 50);
 
     for (int i = 0; i < N * N; i++)
     {
@@ -355,4 +362,14 @@ void puzzle::on_pushButton_back_clicked()
         ui->pushButton_back->setEnabled(false);
     }
     showStep();
+}
+
+void puzzle::on_pushButton_goBack_clicked()
+{
+    close();
+    puzzle wind;
+    wind.close();
+    levels window;
+    window.setModal(true);
+    window.exec();
 }

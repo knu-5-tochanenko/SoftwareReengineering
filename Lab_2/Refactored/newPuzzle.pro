@@ -36,7 +36,6 @@ SOURCES += \
     clickablelabel.cpp \
     levels.cpp \
     sublevels.cpp \
-    settings.cpp \
     end.cpp
 
 HEADERS += \
@@ -50,7 +49,6 @@ HEADERS += \
     singleton.h \
     levels.h \
     sublevels.h \
-    settings.h \
     end.h \
     testing.h \
     sortfactory.h
@@ -62,7 +60,6 @@ FORMS += \
     puzzle.ui \
     levels.ui \
     sublevels.ui \
-    settings.ui \
     end.ui
 
 DISTFILES += \
