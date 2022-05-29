@@ -35,6 +35,7 @@ void menu1::on_pushButton_exit_clicked()
 {
     writeSettings();
     hide();
+    QApplication::quit();
 }
 
 void menu1::on_pushButton_forPleasure_clicked()
