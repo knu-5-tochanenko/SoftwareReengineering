@@ -37,6 +37,7 @@ private slots:
     void on_pushButton_exit_clicked();
     void on_pushButton_forward_clicked();
     void on_pushButton_back_clicked();
+    void on_pushButton_goBack_clicked();
 
 private:
     Ui::puzzle *ui;
