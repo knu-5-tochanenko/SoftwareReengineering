@@ -4,6 +4,7 @@
 #include "singleton.h"
 #include "sublevels.h"
 #include "ui_levels.h"
+#include "imageutils.h"
 #include <QStyle>
 #include <QSettings>
 
@@ -12,6 +13,12 @@ levels::levels(QWidget *parent) : QDialog(parent),
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint);
+
+    ui->label_score->setText(
+                QString::number(Singleton::getInstance().numberOfStars)
+    );
+    ImageUtils::bindImage<QGridLayout>(":/levels/star.png", ui->gridLayout_label, 30, 30);
+
     makeInvisible();
     checkButtons();
     Singleton::getInstance().ifLevels = true;
@@ -39,18 +46,22 @@ void levels::checkButtons()
     if (Singleton::getInstance().numberOfStars >= 10)
     {
         ui->pushButton_2Level->setEnabled(true);
+        ui->pushButton_2Level->setText("2 Level");
     }
     if (Singleton::getInstance().numberOfStars >= 25)
     {
         ui->pushButton_3Level->setEnabled(true);
+        ui->pushButton_3Level->setText("3 Level");
     }
     if (Singleton::getInstance().numberOfStars >= 45)
     {
         ui->pushButton_4Level->setEnabled(true);
+        ui->pushButton_4Level->setText("4 Level");
     }
     if (Singleton::getInstance().numberOfStars >= 100)
     {
         ui->pushButton_5Level->setEnabled(true);
+        ui->pushButton_5Level->setText("5 Level");
     }
 }
 
