@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>550</height>
+    <width>480</width>
+    <height>360</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>550</width>
-    <height>550</height>
+    <width>480</width>
+    <height>360</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>550</width>
-    <height>550</height>
+    <width>480</width>
+    <height>360</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,10 +28,10 @@
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>190</x>
      <y>170</y>
      <width>261</width>
-     <height>231</height>
+     <height>111</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_sublevelButtons"/>
@@ -39,7 +39,7 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>30</x>
      <y>30</y>
      <width>161</width>
      <height>141</height>
@@ -54,14 +54,14 @@
   <widget class="QPushButton" name="pushButton_menu">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>400</y>
+     <x>190</x>
+     <y>290</y>
      <width>261</width>
-     <height>61</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>menu</string>
+    <string>MENU</string>
    </property>
   </widget>
  </widget>
