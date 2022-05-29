@@ -106,3 +106,10 @@ users.endGroup();
 ## 7. Виправити помилку коли при закритті додатку лише закривається UI, а процес залишається активним
 
 Повні зміни у [мердж реквесті](https://github.com/knu-5-tochanenko/SoftwareReengineering/pull/12/files).
+
+# Остаточний вид додатку
+
+
+
+https://user-images.githubusercontent.com/34678912/170876588-776755ad-8c2a-48d3-a4a2-cccc00e7cb85.mp4
+
