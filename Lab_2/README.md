@@ -92,3 +92,9 @@ users.endGroup();
 Повні зміни у [мердж реквесті](https://github.com/knu-5-tochanenko/SoftwareReengineering/pull/9/files).
 
 ## 5. Додати затримку після того, як було успішно складено паззл; Додати оновлювану кількість зірок після успішного складання паззлу
+
+Було пофікшено відображення тексту "Congratulations" і додано відображення зірок.
+
+![alt text](./images/10.png)
+
+Повні зміни у [мердж реквесті](https://github.com/knu-5-tochanenko/SoftwareReengineering/pull/10/files).
