@@ -2,7 +2,6 @@
 #include "ui_puzzle.h"
 #include "singleton.h"
 #include "end.h"
-#include "settings.h"
 #include "sortfactory.h"
 #include "levels.h"
 #include "imageutils.h"
@@ -304,14 +303,6 @@ bool puzzle::ifFinished(QVector<int> places)
 puzzle::~puzzle()
 {
     delete ui;
-}
-
-void puzzle::on_pushButton_settings_clicked()
-{
-
-    Settings window;
-    window.setModal(true);
-    window.exec();
 }
 
 void puzzle::on_pushButton_toEnd_clicked()

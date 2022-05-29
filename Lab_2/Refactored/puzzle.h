@@ -32,7 +32,6 @@ public:
 private slots:
     void updateTime();
     void pic_clicked();
-    void on_pushButton_settings_clicked();
     void on_pushButton_toEnd_clicked();
     void on_pushButton_exit_clicked();
     void on_pushButton_forward_clicked();
