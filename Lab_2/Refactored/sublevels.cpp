@@ -7,7 +7,6 @@
 #include "ui_sublevels.h"
 #include "imageutils.h"
 #include <QMessageBox>
-#include <QDebug>
 #include <QSettings>
 
 sublevels::sublevels(QWidget *parent) : QDialog(parent),

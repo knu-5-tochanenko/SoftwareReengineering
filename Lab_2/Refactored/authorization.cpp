@@ -4,7 +4,6 @@
 #include "singleton.h"
 #include "imageutils.h"
 #include <QSettings>
-#include <QDebug>
 
 authorization::authorization(QWidget *parent) : QMainWindow(parent),
                                                 ui(new Ui::authorization)
